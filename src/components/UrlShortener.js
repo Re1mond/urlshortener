@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import UrlFormBox from './UrlFormBox';
 import { shortenUrl } from '../ApiService';
-import ButtonCopy from './ButtonCopy'
+import ButtonCopyText from './ButtonCopyText'
 
 const UrlShortenerComponent = () => {
   const [shortUrl, setShortUrl] = useState('');
@@ -16,6 +16,7 @@ const UrlShortenerComponent = () => {
       setShortUrl(result.shortUrl);
     } catch (error) {
       console.error("Error creating short URL", error);
+      setLoading(false);
     }
   };
 
@@ -30,7 +31,7 @@ const UrlShortenerComponent = () => {
               <a href={shortUrl} className="text-indigo-500 underline">
                 {shortUrl}
               </a>
-              <ButtonCopy textToCopy={shortUrl} />
+              <ButtonCopyText textToCopy={shortUrl} />
             </p>
           ) : null
         ) : (

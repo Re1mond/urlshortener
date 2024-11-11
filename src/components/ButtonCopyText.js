@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ButtonCopy({ textToCopy }) {
+function ButtonCopyText({ textToCopy }) {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const copyToClipboard = async () => {
@@ -44,4 +44,4 @@ function ButtonCopy({ textToCopy }) {
   );
 }
 
-export default ButtonCopy;
+export default ButtonCopyText;
